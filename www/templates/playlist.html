@@ -1,0 +1,31 @@
+<ion-view view-title="Tarif">
+	<ion-content>
+
+		<div class="list card">
+
+			<div class="item item-avatar">
+				<img src="{{bilgi.resim}}">
+				<h2>{{bilgi.adi}}</h2>
+				<p>{{bilgi.turu}}</p>
+			</div>
+
+			<div class="item item-body">
+				<img class="full-image" src="{{bilgi.resim}}">
+				<p>	{{bilgi.tarif}}</p>
+
+				<div class="list">
+
+					<a class="item" ng-repeat='malzeme in bilgi.malzemeler'>
+						<i class="far fa-clipboard"></i>
+						{{malzeme.adi}}
+						<span class="badge badge-royal">{{malzeme.adet}}</span>
+					</a>
+
+				</div>
+			</div>
+
+		</div>
+
+
+	</ion-content>
+</ion-view>

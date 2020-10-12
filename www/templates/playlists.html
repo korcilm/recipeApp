@@ -1,0 +1,50 @@
+<ion-view view-title="Recipes">
+	<ion-content>
+
+		<div class="list list-inset">
+			<label class="item item-input">
+				<i class="icon ion-search placeholder-icon"></i>
+				<input type="text" placeholder="Yemek Ara" ng-model="kelime">
+			</label>
+		</div>
+
+		<div class="list">
+
+			<div class="item item-button">
+				<a class="button button-royal">
+					Etli
+				</a>
+				<a class="button button-royal">
+					Sebzeli
+				</a>
+				<a class="button button-royal">
+					Çorba
+				</a>
+				<a class="button button-royal">
+					Tatlı
+				</a>
+				<a class="button button-royal">
+					Salata
+				</a>
+			</div>
+
+		</div>
+		<div class="card" ng-if="kelime">
+			<div class="item item-text-wrap">
+				{{kelime}} ait {{sonuc.length}} sonuç
+			</div>
+		</div>
+
+		<div class="list" >
+
+			<a class="item item-avatar" ng-repeat="yemek in yemekler | filter:kelime as sonuc" href="#/app/playlists/{{yemek.id}}">
+				<img src="{{yemek.resim}}">
+				<h2>{{yemek.adi}}</h2>
+				<p>{{yemek.turu}}</p>
+			</a>
+
+		</div> 
+
+
+	</ion-content>
+</ion-view>
